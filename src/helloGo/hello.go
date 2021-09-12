@@ -1,7 +1,17 @@
 package main
-
-import "fmt"
-
+import (
+    //"fmt"
+    "errors"
+    "log"
+)
 func main() {
-    fmt.Println("Hello, World!")
+
+   log.SetFlags(log.Ldate |log.Ltime | log.Lmicroseconds )
+
+   log.SetPrefix("看看是啥----->")
+
+   message := errors.New("--------->  错误！！！")
+   
+   log.Print(message)
+
 }

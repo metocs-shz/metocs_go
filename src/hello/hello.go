@@ -4,13 +4,22 @@ import (
 
 	"fmt"
 
+	"log"
+
 	"example.com/greetings"
 )
 	
 
 
 func main(){
-	message := greetings.Hello("metocs")
+    log.SetPrefix("greetings: ")
+    log.SetFlags(0)
 
-	fmt.Println(message)
+    message, err := greetings.Hello("metocs")
+    
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Println(message)
 }
