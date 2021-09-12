@@ -340,226 +340,9 @@ exit status 1
 D:\demo\metocs_go\src\hello>
 ```
 
-
-
-### **留坑 errors 包 与 log 包**
-
-### log 包
-
-**概述**
-
-包日志实现了一个简单的日志包。  它定义了一个类型，Logger， 与格式化输出的方法。  它还具有预定义的“标准” 可通过辅助函数 Print[f|ln]、Fatal[f|ln] 和 Panic[f|ln]，比手动创建 Logger 更容易使用。 该记录器写入标准错误并打印日期和时间 每个记录的消息。 每条日志消息都在单独的行上输出：如果消息是 打印不以换行符结尾，记录器将添加一个。 Fatal 函数在写入日志消息后调用 os.Exit(1)。 Panic 函数在写入日志消息后调用 panic。 
-
-**Constants**
-
-```go
-const (
-	Ldate = 1 << iota      								// 本地时区的日期：2009/01/23 
-	Ltime 												// 本地时区的时间 
-	Lmicroseconds 										// 微秒分辨率：01:23:23.123123。 假设 Ltime。 
-	Llongfile 											// 完整文件名和行号：/a/b/c/d.go:23 
-	Lshortfile 											// 最终文件名元素和行号：d.go:23。 覆盖 Llongfile 
-	LUTC 												// 如果设置了 Ldate 或 Ltime，则使用 UTC 而不是本地时区 
-	Lmsgprefix 											// 将“前缀”从行首移动到消息之前 
-	LstdFlags = Ldate | Ltime 							// 标准记录器的初始值
-)
-```
-
-这些常量的组合会修改打印内容
-
-flags Ldate | Ltime (or LstdFlags) produce,
-
-```
-2009/01/23 01:23:23 message
-```
-
-while flags Ldate | Ltime | Lmicroseconds | Llongfile produce,
-
-```
-2009/01/23 01:23:23.123123 /a/b/c/d.go:23: message
-```
-
-**Functions** 
-
-func fatal
-
-```go
-func Fatal(v ...interface{})
-
-Fatal 相当于 Print() 然后再调用 os.Exit(1)
-```
-
-```go
-package main
-import (
-//    "fmt"
-    "errors"
-    "log"
-)
-func main() {
-   // fmt.Println("Hello, World!")
-   message := errors.New("------->测试 Fatal")
-   log.Fatal(message)
-}
-
-D:\demo\metocs_go\src\helloGo>go run hello.go
-2021/09/12 10:50:32 ------->测试 Fatal
-exit status 1
-
-D:\demo\metocs_go\src\helloGo>
-```
-
-**注意**
-
-```shell
-D:\demo\metocs_go\src\helloGo>go run hello.go				# 导入没有用到的包编译会报错
-# command-line-arguments
-.\hello.go:4:5: imported and not used: "fmt"
-
-D:\demo\metocs_go\src\helloGo>  
-```
-
-func Fatalf
-
-```go
-func Fatalf(format string, v ...interface{})
-
-Fatalf 相当于 Printf() 然后再调用 os.Exit(1)
-```
-
-```go
-package main
-
-import (
-   // "fmt"
-    "errors"
-    "log"
-)
-func main() {
-   // fmt.Println("Hello, World!")
-   message := errors.New("------->测试 Fatalf")
-   log.Printf("就是测试这个  %s, %s ",message,"对就是这个")
-   log.Fatalf("就是测试这个  %s, %s ",message,"对就是这个")
-}
-
-D:\demo\metocs_go\src\helloGo>go run hello.go
-2021/09/12 10:58:04 就是测试这个  ------->测试 Fatalf, 对就是这个
-2021/09/12 10:58:04 就是测试这个  ------->测试 Fatalf, 对就是这个
-exit status 1
-
-D:\demo\metocs_go\src\helloGo>
-```
-
-func Fatalln
-
-```go
-func Fatalln(v ...interface{})
-
-Fatalln 相当于 Println() 然后再调用 os.Exit(1)
-```
-
-```go
-package main
-import (
-    //"fmt"
-    "errors"
-    "log"
-)
-func main() {
-   // fmt.Println("Hello, World!")
-   message := errors.New("------->测试 Fatal")
-
-   log.Println(message)
-   log.Fatalln("Hello World!")
-
-}
-
-D:\demo\metocs_go\src\helloGo>go run hello.go
-2021/09/12 10:56:10 ------->测试 Fatal
-2021/09/12 10:56:10 Hello World!
-exit status 1
-
-D:\demo\metocs_go\src\helloGo>
-```
-
-
-
-**注意**
-
-**Fatal、Fatalf、Fatalln 等函数调用后程序就会退出 不会执行之后的代码**
-
-func Flags
-
-```go
-func Flags() int 
-
-Flags 返回标准记录器的输出标志。 标志位是 Ldate、Ltime 等。 
-```
-
-```go
-package main
-import (
-    //"fmt"
-    "errors"
-    "log"
-)
-func main() {
-   // fmt.Println("Hello, World!")
-   message := errors.New("------->测试 Fatal")
-   log.Println(message)
-   num := log.Flags()
-   log.Fatalln(num)
-}
-
-D:\demo\metocs_go\src\helloGo>go run hello.go
-2021/09/12 11:10:54 ------->测试 Fatal
-2021/09/12 11:10:54 3
-exit status 1
-
-D:\demo\metocs_go\src\helloGo>
-```
-
-func Output
-
-```go
-func Output(calldepth int, s string) error
-
-输出写入日志事件的输出。 字符串 s 包含 在由标志指定的前缀之后打印的文本记录。 如果 s 的最后一个字符不是，则附加换行符已经换行了。 Calldepth 是数量的计数 计算文件名和行号时要跳过的帧 如果设置了 Llongfile 或 Lshortfile；值为 1 将打印详细信息对于输出的调用者。
-```
-
-func SetPrefix
-
-```go
-func SetPrefix(prefix string)
-
-设置logger的输出前缀。
-```
-
-```go
-package main
-import (
-    //"fmt"
-    "errors"
-    "log"
-)
-func main() {
-   log.SetFlags(log.Ldate |log.Ltime | log.Lmicroseconds )	
-   log.SetPrefix("看看是啥----->")
-   message := errors.New("--------->  错误！！！")
-   log.Print(message)
-}
-
-D:\demo\metocs_go\src\helloGo>go run hello.go
-看看是啥----->2021/09/12 11:35:13.444140 --------->  错误！！！
-
-D:\demo\metocs_go\src\helloGo>
-```
-
-
-
 **后续会在进行整理改正**
 
-### 返回水随机问候
+### 返回随机问候
 
 修改greeting.go 程序
 
@@ -631,23 +414,216 @@ Hi, metocs. Welcome!
 D:\demo\metocs_go\src\hello>
 ```
 
+### 回复多人问候  
+
+在greeting.go 程序中创建新的函数
+
+```go
+func Hellos(names []string) (map[string]string,error){
+    messages := make(map[string]string)						// 创建一个map key sring name value string messgae
+    														// map 初始化的语法   make(map[key-type]value-type)
+    for _ , name := range names {							// 在这个for循环中range将会返回两个值：索引 与 数组中的值的副本
+        													// 颗不需要哪个值可以用空白标识符代替
+        message ,err := Hello(name)			
+        if err != nil {
+            return nil,err
+        }
+        messages[name] = messages
+    }
+    return messages,nil
+}
+```
+
+注意  该 for循环中返回的为数组中值的副本
 
 
 
+修改 hello.go 文件
+
+```go
+package main
+
+import (
+	"fmt"
+	"log"
+	"example.com/greetings"
+)
+	
+func main(){
+    log.SetPrefix("greetings: ")
+    log.SetFlags(0)
+    //message, err := greetings.Hello("metocs")
+
+    names := []string{"Gladys", "Samantha", "Darrin","metocs"}		// 创建一个字符串数组
+
+    messages, err := greetings.Hellos(names)						// 调用Hellos 方法
+
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(messages)											// 打印输出结果
+}
+```
 
 
 
+```
+D:\demo\metocs_go\src\hello>go run .
+map[Darrin:Great to see you, Darrin! Gladys:Great to see you, Gladys! Samantha:Hail, Samantha! Well met! metocs:Hi, metocs. Welcome!]
+
+D:\demo\metocs_go\src\hello>
+```
 
 
 
+### 创建一个测试单元
+
+Go 对单元测试的内置支持使您可以更轻松地进行测试。   具体来说，使用命名约定，Go 的 `testing`包，和   这 `go test`命令，您可以快速编写和执行测试。 
+
+1. ​    在 greetings 目录中，创建一个名为 greetings_test.go 的文件。      
+
+   ​      以 _test.go 结尾的文件名告诉 `go test`命令  该文件包含测试功能      
+
+2. 复制以下代码
+
+3. 
+
+```go
+package greetings
+
+import (
+    "testing"
+    "regexp"
+)
+
+// TestHelloName calls greetings.Hello with a name, checking
+// for a valid return value.
+func TestHelloName(t *testing.T) {
+    name := "Gladys"
+    want := regexp.MustCompile(`\b`+name+`\b`)
+    msg, err := Hello("Gladys")
+    if !want.MatchString(msg) || err != nil {
+        t.Fatalf(`Hello("Gladys") = %q, %v, want match for %#q, nil`, msg, err, want)
+    }
+}
+
+// TestHelloEmpty calls greetings.Hello with an empty string,
+// checking for an error.
+func TestHelloEmpty(t *testing.T) {
+    msg, err := Hello("")
+    if msg != "" || err == nil {
+        t.Fatalf(`Hello("") = %q, %v, want "", error`, msg, err)
+    }
+}
+
+
+/*
+    创建两个测试函数来测试 greetings.Hello功能。 测试函数名称具有以下形式 TestName, 其中 Name 说明了有关特定测试的内容。 还有，测试函数接受一个指向 testing包的 testing.T类型 作为参数。 使用此参数的方法进行报告并从您的测试中记录。 
+*/
+```
+
+使用   go test   命令进行测试
+
+```
+D:\demo\metocs_go\src\greetings>go test
+PASS
+ok      example.com/greetings   0.046s
+
+D:\demo\metocs_go\src\greetings>
+```
+
+使用   go test   -v    命令进行测试  并获得更详细的结果
+
+```
+D:\demo\metocs_go\src\greetings>go test -v
+=== RUN   TestHelloName
+--- PASS: TestHelloName (0.00s)
+=== RUN   TestHelloEmpty
+--- PASS: TestHelloEmpty (0.00s)
+PASS
+ok      example.com/greetings   0.036s
+
+D:\demo\metocs_go\src\greetings>
+```
 
 
 
+修改 greetings.go  Hello 函数代码
+
+```go
+func Hello(name string) (string, error) {
+    // If no name was given, return an error with a message.
+    if name == "" {
+        return name, errors.New("empty name")
+    }
+    // Create a message using a random format.
+    // message := fmt.Sprintf(randomFormat(), name)			
+    message := fmt.Sprint(randomFormat())				// 即使传递了名字也不会将名字放入
+    return message, nil
+}
+
+//因测试代码中
+
+func TestHelloName(t *testing.T) {
+    name := "Gladys"
+    want := regexp.MustCompile(`\b`+name+`\b`)			// 对返回结果是否将该名字放入其中进行了判断 因此 
+    msg, err := Hello("Gladys")
+    if !want.MatchString(msg) || err != nil {
+        t.Fatalf(`Hello("Gladys") = %q, %v, want match for %#q, nil`, msg, err, want)		// 这一行代码被执行了
+    }
+}
+
+
+```
+
+### 编译并安装应用程序 
+
+  在最后一个主题中，您将学习一些新的 `go`命令。  尽管 `go run`命令是当您进行频繁更改程序时快捷编译和运行的方式 ，它不会生成可执行的二进制文件 
+
+  本主题介绍了两个用于构建代码的附加命令： 
+
+- ​    这 go   build  命令 编译包及其依赖项，但它不会安装编译结果。    
+- ​    这 go  install  命令 编译并安装软件包。   
+
+在 hello 模块中 执行 以下命令
+
+```
+go build
+```
+
+![image-20210912180311168](C:\Users\xiaomy\AppData\Roaming\Typora\typora-user-images\image-20210912180311168.png)
+
+获得以上文件 并在当前目录下执行该文件
+
+```
+D:\demo\metocs_go\src\hello>hello.exe
+map[Darrin:Hail, Darrin! Well met! Gladys:Hi, Gladys. Welcome! Samantha:Hi, Samantha. Welcome! metocs:Hail, metocs! Well met!]
+
+D:\demo\metocs_go\src\hello>
+```
+
+发现 Go 安装路径，go 命令将在其中安装当前包。
+
+```
+go list -f '{{.Target}}'
+```
+
+例如，命令的输出可能会说 `/home/gopher/bin/hello`,       意味着二进制文件安装到 /home/gopher/bin。  你会需要这个，   下一步安装目录。     
+
+将 Go 安装目录添加到系统的 shell 路径。      
+
+```
+ set PATH=%PATH%;D:\software\go				// 设置 go的安目录
+ 
+ 
+ go env -w GOBIN=D:\demo\metocs_go\bin		// 设置go install 后文件的存放目录 
+```
+
+hello 下执行 go install
 
 
 
-
-
+hello.exe 就会放在  D:\demo\metocs_go\bin 目录下  在任何文件夹下访问 该文件都可以的到结果
 
 
 

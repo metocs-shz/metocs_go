@@ -15,15 +15,13 @@ func Hello(name string) (string, error) {
     }
     // Create a message using a random format.
     message := fmt.Sprintf(randomFormat(), name)
+    //message := fmt.Sprint(randomFormat())
     return message, nil
 }
 
 // init sets initial values for variables used in the function.
 func init() {
     rand.Seed(time.Now().UnixNano())
-}
-func init() {
-    fmt.Println("我已经执行完了")
 }
 
 
@@ -40,4 +38,26 @@ func randomFormat() string {
     // Return a randomly selected message format by specifying
     // a random index for the slice of formats.
     return formats[rand.Intn(len(formats))]
+}
+
+
+
+func Hellos(names []string) (map[string]string,error){
+
+    messages := make(map[string]string)
+
+    for _ , name := range names {
+
+        message ,err := Hello(name)
+
+        if err != nil {
+
+            return nil,err
+
+        }
+        messages[name] = message
+    }
+
+    return messages,nil
+
 }
