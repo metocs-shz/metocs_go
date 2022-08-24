@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6bea557-d5cf-437d-8f17-91908dad5bb1" name="变更" comment="提交消息项目" />
+    <list default="true" id="e6bea557-d5cf-437d-8f17-91908dad5bb1" name="变更" comment="提交消息项目">
+      <change afterPath="$PROJECT_DIR$/metocs_websocket/config/application.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metocs_websocket/config/application.toml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +71,7 @@
     "WebServerToolWindowFactoryState": "false",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/demo/metocs_go",
+    "last_opened_file_path": "D:/demo/metocs_go/metocs_websocket",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "vcs.Git"
   },
@@ -121,7 +124,7 @@
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="Show.Git.Branches" value="true" />
+                  <entry key="Show.Git.Branches" value="false" />
                 </map>
               </option>
               <option name="FILTERS">
