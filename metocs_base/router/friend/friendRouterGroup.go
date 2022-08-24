@@ -2,7 +2,7 @@ package friend
 
 import (
 	"github.com/gin-gonic/gin"
-	"metocs_go/apis/friend"
+	"metocs/base/apis/friend"
 )
 
 func RouterGroup(router *gin.RouterGroup) {

@@ -2,7 +2,7 @@ package user
 
 import (
 	"github.com/gin-gonic/gin"
-	"metocs_go/apis/user"
+	"metocs/base/apis/user"
 )
 
 func RouterGroup(router *gin.RouterGroup) {

@@ -2,7 +2,7 @@ package models
 
 import (
 	"gorm.io/gorm"
-	"metocs_go/database"
+	"metocs/base/database"
 )
 
 type RoomMember struct {

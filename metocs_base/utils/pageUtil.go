@@ -2,7 +2,7 @@ package utils
 
 import (
 	"gorm.io/gorm"
-	"metocs_go/database"
+	"metocs/base/database"
 )
 
 func Page(pageSize, pageNum int) *gorm.DB {

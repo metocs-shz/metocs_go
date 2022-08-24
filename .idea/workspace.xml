@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6bea557-d5cf-437d-8f17-91908dad5bb1" name="变更" comment="提交消息项目">
-      <change afterPath="$PROJECT_DIR$/metocs_websocket/config/application.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metocs_websocket/config/application.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metocs_websocket/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metocs_websocket/websocket/api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +87,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\demo\metocs_go\metocs_websocket" />
       <recent name="D:\demo\metocs_go" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

@@ -3,8 +3,8 @@ package models
 import (
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
-	database "metocs_go/database"
-	"metocs_go/utils"
+	database "metocs/base/database"
+	"metocs/base/utils"
 	"time"
 )
 

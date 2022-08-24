@@ -1,4 +1,4 @@
-app_name = "metocs_go"
+app_name = "metocs/base"
 
 [server]
 port = 8888

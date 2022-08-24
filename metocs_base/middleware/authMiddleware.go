@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"
 	"log"
-	"metocs_go/config"
+	"metocs/base/config"
 	"net/http"
 	"strings"
 	"time"

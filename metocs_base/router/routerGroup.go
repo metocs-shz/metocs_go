@@ -2,13 +2,13 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"metocs_go/config"
-	"metocs_go/middleware"
-	"metocs_go/router/auth"
-	"metocs_go/router/friend"
-	"metocs_go/router/message"
-	"metocs_go/router/room"
-	"metocs_go/router/user"
+	"metocs/base/config"
+	"metocs/base/middleware"
+	"metocs/base/router/auth"
+	"metocs/base/router/friend"
+	"metocs/base/router/message"
+	"metocs/base/router/room"
+	"metocs/base/router/user"
 )
 
 func GroupInit(engine *gin.Engine) {

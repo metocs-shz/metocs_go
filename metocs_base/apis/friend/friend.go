@@ -4,8 +4,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"log"
-	"metocs_go/models"
-	"metocs_go/utils"
+	"metocs/base/models"
+	"metocs/base/utils"
 	"strconv"
 )
 

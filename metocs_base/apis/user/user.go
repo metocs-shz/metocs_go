@@ -3,8 +3,8 @@ package user
 import (
 	"github.com/gin-gonic/gin"
 	"log"
-	"metocs_go/models"
-	"metocs_go/utils"
+	"metocs/base/models"
+	"metocs/base/utils"
 )
 
 // CreateUser 创建一个用户

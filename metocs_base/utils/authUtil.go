@@ -2,7 +2,7 @@ package utils
 
 import (
 	"github.com/gin-gonic/gin"
-	"metocs_go/middleware"
+	"metocs/base/middleware"
 )
 
 func GetClaim(c *gin.Context) *middleware.UserClaims {

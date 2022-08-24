@@ -4,9 +4,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"log"
-	"metocs_go/database"
-	"metocs_go/models"
-	"metocs_go/utils"
+	"metocs/base/database"
+	"metocs/base/models"
+	"metocs/base/utils"
 )
 
 //RoomDataParam 房间参数

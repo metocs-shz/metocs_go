@@ -5,7 +5,7 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"log"
-	"metocs_go/config"
+	"metocs/base/config"
 )
 
 var DB *gorm.DB

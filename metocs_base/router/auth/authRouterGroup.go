@@ -2,7 +2,7 @@ package auth
 
 import (
 	"github.com/gin-gonic/gin"
-	"metocs_go/apis/auth"
+	"metocs/base/apis/auth"
 )
 
 func RouterGroup(router *gin.RouterGroup) {

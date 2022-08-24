@@ -3,9 +3,9 @@ package auth
 import (
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
-	"metocs_go/middleware"
-	"metocs_go/models"
-	"metocs_go/utils"
+	"metocs/base/middleware"
+	"metocs/base/models"
+	"metocs/base/utils"
 )
 
 // Login  用户登录

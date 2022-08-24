@@ -3,9 +3,9 @@ package app
 import (
 	"github.com/gin-gonic/gin"
 	"log"
-	"metocs_go/database"
-	"metocs_go/middleware"
-	"metocs_go/router"
+	"metocs/base/database"
+	"metocs/base/middleware"
+	"metocs/base/router"
 	"net/http"
 	"time"
 )

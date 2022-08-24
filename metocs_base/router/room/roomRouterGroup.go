@@ -2,7 +2,7 @@ package room
 
 import (
 	"github.com/gin-gonic/gin"
-	"metocs_go/apis/room"
+	"metocs/base/apis/room"
 )
 
 func RouterGroup(router *gin.RouterGroup) {

@@ -2,7 +2,7 @@ package message
 
 import (
 	"github.com/gin-gonic/gin"
-	"metocs_go/apis/message"
+	"metocs/base/apis/message"
 )
 
 func RouterGroup(router *gin.RouterGroup) {
