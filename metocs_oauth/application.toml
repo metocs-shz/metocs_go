@@ -1,13 +1,13 @@
-app_name = "metocs/oauth"
+app_name = "metocs"
 
 [server]
-port = 8001
-path = "/oauth"
+port = 8888
+path = "/metocs"
 
 [mysql]
-ip = "127.0.0.1"
+ip = "192.168.31.95"
 port = 3306
-username = "root"
+username = "metocs"
 password = "s164857362"
 database = "metocs"
 

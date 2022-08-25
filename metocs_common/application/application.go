@@ -9,7 +9,7 @@ type AppConfig struct {
 	Server      *server
 	MysqlConfig *mysqlConfig
 	Auth        *auth
-	Redis       *Redis
+	Redis       *redis
 }
 
 type server struct {
@@ -30,7 +30,7 @@ type auth struct {
 	Expires int
 }
 
-type Redis struct {
+type redis struct {
 	Ip       string
 	Password string
 	Port     int
@@ -62,7 +62,7 @@ func ApplicationInit() *AppConfig {
 			Secret:  viper.GetString("auth.secret"),
 			Expires: viper.GetInt("auth.expires"),
 		},
-		Redis: &Redis{
+		Redis: &redis{
 			Ip:       viper.GetString("redis.ip"),
 			Port:     viper.GetInt("redis.port"),
 			Password: viper.GetString("redis.password"),
