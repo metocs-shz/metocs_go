@@ -3,12 +3,16 @@ package run
 import (
 	"github.com/gin-gonic/gin"
 	"log"
+	"metocs/common/application"
 	"metocs/common/database"
 	"net/http"
+	"strconv"
 	"time"
 )
 
 func Run() {
+	// 获取配置数据
+	config := application.Application
 	// 创建mysql数据源
 	database.MysqlInit()
 	//创建redis数据园
@@ -16,8 +20,9 @@ func Run() {
 
 	//启动服务器监听
 	engine := gin.Default()
+
 	s := &http.Server{
-		Addr:           ":8888",
+		Addr:           ":" + strconv.Itoa(config.Server.Port) + config.Server.Path,
 		Handler:        engine,
 		ReadTimeout:    10 * time.Second,
 		WriteTimeout:   10 * time.Second,

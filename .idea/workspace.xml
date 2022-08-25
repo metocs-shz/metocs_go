@@ -4,69 +4,64 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6bea557-d5cf-437d-8f17-91908dad5bb1" name="变更" comment="提交消息项目">
-      <change afterPath="$PROJECT_DIR$/metocs_common/database/redisDatabase.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metocs_common/run/applicationRun.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="34438807-57b7-4b4f-8d65-5d72958357af" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metocs_websocket/config/application.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_common/application/application.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metocs_websocket/config/application.toml" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_websocket/application.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/apis/auth/auth.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/apis/friend/friend.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/apis/message/message.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/apis/room/room.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/apis/user/user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/app/start.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/config/application.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/config/application.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/database/database.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/middleware/authMiddleware.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/middleware/revover.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/middleware/settings.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/models/baseModel.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/models/friend.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/models/privateRoom.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/models/room.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/models/roomMember.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/models/roomMessage.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/models/user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/router/auth/authRouterGroup.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/router/friend/friendRouterGroup.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/router/message/messageRouterGroup.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/router/room/roomRouterGroup.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/router/routerGroup.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/router/user/userRouterGroup.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/utils/authUtil.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/utils/httpUtils.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/utils/pageUtil.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_base/utils/snowflake.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_common/run/applicationRun.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_common/run/applicationRun.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_oauth/application.toml" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_oauth/application.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metocs_websocket/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_websocket/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metocs_websocket/websocket/api.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Go Application" />
-        <option value="Go File" />
-      </list>
-    </option>
-  </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../software/go" />
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../software/golang" />
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="shihongze &lt;70457507+xiaomy749@users.noreply.github.com&gt;" />
-      </list>
-    </option>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="im" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="main" />
-      </list>
-    </option>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../software/gopath/pkg/mod/github.com/gin-gonic/gin@v1.8.1/context.go" root0="SKIP_INSPECTION" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="true" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2DDNH7sTP3ZJf2r2RXRTKC2wP2h" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2DxjcwpEMiks3X3mjWNaEmYn15m" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
@@ -78,61 +73,16 @@
     "configurable..is.expanded": "false",
     "configurable.GoLibrariesConfigurable.is.expanded": "true",
     "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/demo/metocs_go/metocs_websocket",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.goide.configuration.GoLibrariesConfigurableProvider"
-  },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-    ],
-    "DatabaseDriversLRU": [
-      "mariadb",
-      "mysql"
-    ]
+    "last_opened_file_path": "D:/demo/metocs_go",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\demo\metocs_go\metocs_websocket" />
-      <recent name="D:\demo\metocs_go\metocs_websocket\router" />
-      <recent name="D:\demo\metocs_go" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\demo\metocs_go\middleware" />
-      <recent name="D:\demo\metocs_go\router\user" />
-      <recent name="D:\demo\metocs_go\router\room" />
-      <recent name="D:\demo\metocs_go\apis\user" />
-      <recent name="D:\demo\metocs_go\apis\room" />
+      <recent name="D:\demo\metocs_go\metocs_oauth\models" />
     </key>
   </component>
-  <component name="RunManager" selected="Go 构建.go build metocs/websocket">
-    <configuration name="go build metocs_go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="metocs_go" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="metocs_go" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build metocs/websocket" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="metocs_go" />
-      <working_directory value="$PROJECT_DIR$/metocs_websocket" />
-      <kind value="PACKAGE" />
-      <package value="metocs/websocket" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/metocs_websocket/main.go" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Go 构建.go build metocs/websocket" />
-        <item itemvalue="Go 构建.go build metocs_go" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
@@ -141,52 +91,11 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="false" />
-                </map>
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="im" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="提交基础代码" />
-    <MESSAGE value="添加分支" />
-    <MESSAGE value="基础的创建与查询" />
-    <MESSAGE value="添加查询工具及使用授权获取用户id" />
-    <MESSAGE value="添加消息服务" />
-    <MESSAGE value="提交消息项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交消息项目" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
