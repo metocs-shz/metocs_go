@@ -1,14 +1,15 @@
-package config
+package application
 
 import (
 	"github.com/spf13/viper"
 	"log"
 )
 
-type Application struct {
+type AppConfig struct {
 	Server      *server
 	MysqlConfig *mysqlConfig
 	Auth        *auth
+	Redis       *Redis
 }
 
 type server struct {
@@ -29,15 +30,23 @@ type auth struct {
 	Expires int
 }
 
-func ApplicationInit() *Application {
+type Redis struct {
+	Ip       string
+	Password string
+	Port     int
+	DataBase int
+}
+
+func ApplicationInit() *AppConfig {
 	viper.SetConfigName("application")
 	viper.SetConfigType("toml")
-	viper.AddConfigPath("./config")
+	viper.AddConfigPath("./")
 	err := viper.ReadInConfig()
 	if err != nil {
 		log.Printf("read config failed: %v", err)
 	}
-	return &Application{
+
+	return &AppConfig{
 		Server: &server{
 			Port: viper.GetInt("server.port"),
 			Path: viper.GetString("server.path"),
@@ -53,12 +62,17 @@ func ApplicationInit() *Application {
 			Secret:  viper.GetString("auth.secret"),
 			Expires: viper.GetInt("auth.expires"),
 		},
+		Redis: &Redis{
+			Ip:       viper.GetString("redis.ip"),
+			Port:     viper.GetInt("redis.port"),
+			Password: viper.GetString("redis.password"),
+			DataBase: viper.GetInt("redis.database"),
+		},
 	}
 }
 
-var App = new(Application)
+var Application *AppConfig
 
 func init() {
-	//注入配置参数
-	App = ApplicationInit()
+	Application = ApplicationInit()
 }

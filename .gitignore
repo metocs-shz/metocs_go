@@ -20,4 +20,4 @@
 
 bin/
 /pkg/
-/metocs_base/.idea/
+.idea/

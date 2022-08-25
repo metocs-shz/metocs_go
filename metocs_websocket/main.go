@@ -1,5 +1,7 @@
 package main
 
-func main() {
+import "metocs/common/run"
 
+func main() {
+	run.Run()
 }

@@ -1,11 +1,8 @@
-app_name = "metocs/base"
+app_name = "metocs"
 
 [server]
 port = 8888
 path = "/metocs"
-
-# possible values: DEBUG, INFO, WARNING, ERROR, FATAL
-log_level = "DEBUG"
 
 [mysql]
 ip = "127.0.0.1"
@@ -17,8 +14,7 @@ database = "metocs"
 [redis]
 ip = "127.0.0.1"
 port = 6379
-username = ""
-password = ""
+password = "s164857362"
 
 [auth]
 secret = "my_secret_metocs"
