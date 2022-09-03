@@ -26,8 +26,9 @@ type mysqlConfig struct {
 }
 
 type auth struct {
-	Secret  string
-	Expires int
+	AccessTokenExp    int
+	RefreshTokenExp   int
+	IsGenerateRefresh bool
 }
 
 type redis struct {
@@ -59,8 +60,9 @@ func ApplicationInit() *AppConfig {
 			DataBase: viper.GetString("mysql.database"),
 		},
 		Auth: &auth{
-			Secret:  viper.GetString("auth.secret"),
-			Expires: viper.GetInt("auth.expires"),
+			AccessTokenExp:    viper.GetInt("auth.accessTokenExp"),
+			RefreshTokenExp:   viper.GetInt("auth.refreshTokenExp"),
+			IsGenerateRefresh: viper.GetBool("auth.isGenerateRefresh"),
 		},
 		Redis: &redis{
 			Ip:       viper.GetString("redis.ip"),

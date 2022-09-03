@@ -18,6 +18,7 @@ func MysqlInit() {
 		mysqlConfig.Port,
 		mysqlConfig.DataBase,
 		"10s")
+	fmt.Println(dsn)
 	open, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Println(err.Error())

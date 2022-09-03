@@ -1,7 +1,7 @@
 app_name = "metocs/oauth"
 
 [server]
-port = 8888
+port = 8001
 path = "/oauth"
 
 [mysql]
@@ -12,10 +12,12 @@ password = "s164857362"
 database = "oauth"
 
 [redis]
-ip = "127.0.0.1"
+ip = "192.168.31.95"
 port = 6379
 password = "s164857362"
+database = 15
 
 [auth]
-secret = "my_secret_metocs"
-expires = 2
+accessTokenExp = 2
+refreshTokenExp = 3
+isGenerateRefresh = true

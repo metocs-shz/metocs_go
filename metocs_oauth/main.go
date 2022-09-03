@@ -1,7 +1,16 @@
 package main
 
-import "metocs/common/run"
+import (
+	"github.com/gin-gonic/gin"
+	"metocs/common/run"
+	"metocs/oauth/manager"
+	"metocs/oauth/router"
+)
 
 func main() {
-	run.Run()
+	run.ApplicationInit()
+	manager.OauthInit()
+	engine := gin.Default()
+	router.BaseGroup(engine)
+	run.Run(engine)
 }

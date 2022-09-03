@@ -10,19 +10,19 @@ import (
 	"time"
 )
 
-func Run() {
-	// 获取配置数据
-	config := application.Application
+func ApplicationInit() {
 	// 创建mysql数据源
 	database.MysqlInit()
 	//创建redis数据园
 	database.RedisInit()
+}
 
+func Run(engine *gin.Engine) {
+	// 获取配置数据
+	server := application.Application.Server
 	//启动服务器监听
-	engine := gin.Default()
-
 	s := &http.Server{
-		Addr:           ":" + strconv.Itoa(config.Server.Port) + config.Server.Path,
+		Addr:           ":" + strconv.Itoa(server.Port),
 		Handler:        engine,
 		ReadTimeout:    10 * time.Second,
 		WriteTimeout:   10 * time.Second,
