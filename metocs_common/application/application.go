@@ -60,9 +60,9 @@ func ApplicationInit() *AppConfig {
 			DataBase: viper.GetString("mysql.database"),
 		},
 		Auth: &auth{
-			AccessTokenExp:    viper.GetInt("auth.accessTokenExp"),
-			RefreshTokenExp:   viper.GetInt("auth.refreshTokenExp"),
-			IsGenerateRefresh: viper.GetBool("auth.isGenerateRefresh"),
+			AccessTokenExp:    viper.GetInt("authTool.accessTokenExp"),
+			RefreshTokenExp:   viper.GetInt("authTool.refreshTokenExp"),
+			IsGenerateRefresh: viper.GetBool("authTool.isGenerateRefresh"),
 		},
 		Redis: &redis{
 			Ip:       viper.GetString("redis.ip"),

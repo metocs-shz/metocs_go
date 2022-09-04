@@ -5,22 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34438807-57b7-4b4f-8d65-5d72958357af" name="Changes" comment="OAUTH 授权服务">
-      <change afterPath="$PROJECT_DIR$/metocs_oauth/apis/oauth/oauth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metocs_oauth/errors/error.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metocs_oauth/manager/oauthManage.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metocs_oauth/models/oauth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metocs_oauth/models/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metocs_oauth/router/AuthGroup.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metocs_oauth/router/clientGroup.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metocs_oauth/router/routerGroup.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/metocs_oauth/router/userGroup.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metocs_common/authTool/passWordUtil.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metocs_common/middlerware/recover.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metocs_common/response/Response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metocs_common/utils/MD5Util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metocs_common/utils/pageUtil.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metocs_oauth/apis/clientApis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metocs_oauth/apis/userApis.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metocs_common/application/application.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_common/application/application.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metocs_common/database/mysqlBatabase.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_common/database/mysqlBatabase.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metocs_common/run/applicationRun.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_common/run/applicationRun.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metocs_oauth/application.toml" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_oauth/application.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_oauth/apis/oauth/oauth.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_oauth/apis/oauth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metocs_oauth/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_oauth/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metocs_oauth/oauth/oauthManage.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_oauth/manager/oauthManage.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_oauth/manager/oauthManage.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_oauth/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_oauth/models/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_oauth/router/AuthGroup.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_oauth/router/AuthGroup.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_oauth/router/clientGroup.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_oauth/router/clientGroup.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_oauth/router/routerGroup.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_oauth/router/routerGroup.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metocs_oauth/router/userGroup.go" beforeDir="false" afterPath="$PROJECT_DIR$/metocs_oauth/router/userGroup.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +44,28 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="47b07926-5fb8-4c8f-9351-3139d78e8515" />
+        <option name="url" value="git@github.com:Xiaomy749/metocs_go.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="true" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/metocs_common/application/application.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/metocs_common/authTool/passWordUtil.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/metocs_oauth/application.toml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/metocs_oauth/go.mod" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/metocs_oauth/manager/oauthManage.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/metocs_oauth/models/user.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/metocs_oauth/router/clientGroup.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/metocs_oauth/router/routerGroup.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/metocs_oauth/router/userGroup.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../software/golang/src/encoding/json/stream.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../software/gopath/pkg/mod/github.com/go-oauth2/gin-server@v1.1.0/server.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../software/gopath/pkg/mod/github.com/go-oauth2/oauth2/v4@v4.5.1/const.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../software/gopath/pkg/mod/github.com/go-oauth2/oauth2/v4@v4.5.1/server/server.go" root0="FORCE_HIGHLIGHTING" />
@@ -88,6 +104,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\demo\metocs_go\metocs_oauth\apis" />
       <recent name="D:\demo\metocs_go\metocs_oauth\models" />
     </key>
   </component>

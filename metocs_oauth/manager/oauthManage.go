@@ -20,6 +20,7 @@ import (
 
 var (
 	OauthServer *server.Server
+	OauthStore  *oauth2gorm.ClientStore
 )
 
 func OauthInit() {
@@ -63,7 +64,7 @@ func OauthInit() {
 		DB:       redisConfig.DataBase,
 	}))
 
-	//创建 gin server oatuh 服务管理器
+	//创建 gin server oauth 服务管理器
 	OauthServer = ginserver.InitServer(manager)
 	//设置允许的授权请求类型
 	OauthServer.SetAllowedResponseType(oauth2.Code)

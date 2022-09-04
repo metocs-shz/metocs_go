@@ -4,23 +4,27 @@ import (
 	"github.com/gin-gonic/gin"
 	ginserver "github.com/go-oauth2/gin-server"
 	"metocs/common/application"
-	"metocs/oauth/apis/oauth"
-	"metocs/oauth/models"
+	"metocs/common/middlerware"
+	"metocs/oauth/apis"
 )
 
 func BaseGroup(engine *gin.Engine) {
 	server := application.Application.Server
-	group := engine.Group(server.Path)
+
+	router := engine.Group(server.Path)
+
+	router.Use(middlerware.Recover)
+
+	{
+		ClientGroup(router)
+		UserGroup(router)
+		AuthGroup(router)
+	}
+
+	open := engine.Group(server.Path + "/open")
 	{
 
-		group.GET("/authorize", oauth.Authorize)
-		group.GET("/token", ginserver.HandleTokenRequest)
-
-		//以下接口需要权限
-		group.Use(ginserver.HandleTokenVerify(models.MetocsConfig))
-
-		group.Group("/client", ClientGroup)
-		group.Group("/user", UserGroup)
-		group.Group("/auth", AuthGroup)
+		open.GET("/authorize", apis.Authorize)
+		open.GET("/token", ginserver.HandleTokenRequest)
 	}
 }
