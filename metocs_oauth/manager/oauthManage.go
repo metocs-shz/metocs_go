@@ -67,9 +67,9 @@ func OauthInit() {
 	//创建 gin server oauth 服务管理器
 	OauthServer = ginserver.InitServer(manager)
 	//设置允许的授权请求类型
-	OauthServer.SetAllowedResponseType(oauth2.Code)
+	OauthServer.SetAllowedResponseType(oauth2.Code, oauth2.Token)
+	OauthServer.SetAllowedGrantType(oauth2.AuthorizationCode, oauth2.ClientCredentials)
 	//设置允许的授权模式类型
-	OauthServer.SetAllowedGrantType(oauth2.AuthorizationCode)
 	OauthServer.SetAllowGetAccessRequest(true)
 	OauthServer.SetClientInfoHandler(server.ClientFormHandler)
 	OauthServer.SetUserAuthorizationHandler(models.SerAuthorizationHandler)

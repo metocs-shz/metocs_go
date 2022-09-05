@@ -34,6 +34,7 @@ func CreateClient(c *gin.Context) {
 	err := database.DB.Create(client).Error
 	if err != nil {
 		response.ServerErrorMessage(c, err)
+		return
 	}
 	response.SuccessData(c, client)
 }
@@ -42,6 +43,7 @@ func DeletedClient(c *gin.Context) {
 	id, b := c.GetQuery("id")
 	if !b {
 		response.BadRequestError(c)
+		return
 	}
 	database.DB.WithContext(c).Table("oauth2_clients").Delete("id = ?", id)
 	response.Success(c)
@@ -62,7 +64,8 @@ func ClientPage(c *gin.Context) {
 	}
 	if err != nil {
 		response.ServerError(c)
+		return
 	}
 
-	response.SuccessData(c, clients)
+	response.SuccessPage(c, clients)
 }

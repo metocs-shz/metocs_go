@@ -1,21 +1,17 @@
 app_name = "metocs/websocket"
 
 [server]
-port = 8001
+port = 8002
 path = "/websocket"
 
 [mysql]
-ip = "127.0.0.1"
+ip = "192.168.31.95"
 port = 3306
 username = "metocs"
 password = "s164857362"
 database = "websocket"
 
 [redis]
-ip = "127.0.0.1"
+ip = "192.168.31.95"
 port = 6379
 password = "s164857362"
-
-[auth]
-secret = "my_secret_metocs"
-expires = 2

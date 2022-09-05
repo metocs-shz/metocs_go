@@ -25,6 +25,7 @@ func BaseGroup(engine *gin.Engine) {
 	{
 
 		open.GET("/authorize", apis.Authorize)
+		open.POST("/tokenClient", apis.ClientToken)
 		open.GET("/token", ginserver.HandleTokenRequest)
 	}
 }

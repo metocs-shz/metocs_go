@@ -1,4 +1,4 @@
-package models
+package middlerware
 
 import (
 	"github.com/gin-gonic/gin"
