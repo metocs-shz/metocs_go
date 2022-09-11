@@ -21,3 +21,6 @@ database = 15
 accessTokenExp = 2
 refreshTokenExp = 3
 isGenerateRefresh = true
+clientId = "CDB3FA83A0BCFA83B0EE2FA4D786A72D"
+clientSecret = "C4D17524AC59600DD43494B900D8A825"
+grantType = "password"

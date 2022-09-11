@@ -1,8 +1,7 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
-	"metocs/common/middlerware"
+	"metocs/common/base"
 	"metocs/common/run"
 	"metocs/oauth/manager"
 	"metocs/oauth/router"
@@ -11,9 +10,7 @@ import (
 func main() {
 	run.ApplicationInit()
 	manager.OauthInit()
-	engine := gin.Default()
-	engine.NoMethod(middlerware.Recover405)
-	engine.NoRoute(middlerware.Recover404)
+	engine := base.InitRouter()
 	router.BaseGroup(engine)
 	run.Run(engine)
 }

@@ -21,6 +21,7 @@ import (
 var (
 	OauthServer *server.Server
 	OauthStore  *oauth2gorm.ClientStore
+	RedisStore  *oredis.TokenStore
 )
 
 func OauthInit() {
@@ -58,20 +59,23 @@ func OauthInit() {
 	manager.MapClientStorage(oauthStore)
 
 	//设置token管理器 可升级为集群模式
-	manager.MapTokenStorage(oredis.NewRedisStore(&redis.Options{
+	RedisStore = oredis.NewRedisStore(&redis.Options{
 		Addr:     redisConfig.Ip + ":" + strconv.Itoa(redisConfig.Port),
 		Password: redisConfig.Password,
 		DB:       redisConfig.DataBase,
-	}))
+	})
+	manager.MapTokenStorage(RedisStore)
 
 	//创建 gin server oauth 服务管理器
 	OauthServer = ginserver.InitServer(manager)
 	//设置允许的授权请求类型
 	OauthServer.SetAllowedResponseType(oauth2.Code, oauth2.Token)
 	OauthServer.SetAllowedGrantType(oauth2.AuthorizationCode, oauth2.ClientCredentials)
+	OauthServer.SetAllowedGrantType(oauth2.PasswordCredentials)
 	//设置允许的授权模式类型
 	OauthServer.SetAllowGetAccessRequest(true)
 	OauthServer.SetClientInfoHandler(server.ClientFormHandler)
 	OauthServer.SetUserAuthorizationHandler(models.SerAuthorizationHandler)
+	OauthServer.SetPasswordAuthorizationHandler(models.PasswordAuthorizationHandler)
 
 }

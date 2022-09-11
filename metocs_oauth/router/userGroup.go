@@ -16,6 +16,7 @@ func UserGroup(group *gin.RouterGroup) {
 		engine.DELETE("/deleted", apis.DeletedUser)
 		engine.PUT("/update", apis.UpdateUser)
 		engine.GET("/one", apis.OneUser)
+		engine.GET("/mine", apis.Mine)
 		engine.GET("/page", apis.UserPage)
 	}
 }

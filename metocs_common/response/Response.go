@@ -12,6 +12,7 @@ const (
 	BAD_REQUEST_PARAM    = 2
 	METHOD_IS_NOT_ALLOWD = 3
 	HANDLER_NOT_Found    = 4
+	AUTH_DEIND           = 5
 )
 
 type page struct {
@@ -27,6 +28,10 @@ func SuccessData(c *gin.Context, data interface{}) {
 	c.JSON(http.StatusOK, gin.H{"code": SUCCESS_CODE, "message": "成功！", "data": data})
 }
 
+func SuccessDataMessage(c *gin.Context, message string, data interface{}) {
+	c.JSON(http.StatusOK, gin.H{"code": SUCCESS_CODE, "message": message, "data": data})
+}
+
 func SuccessPage(c *gin.Context, data interface{}) {
 	var count int64
 	database.DB.Find(data).Count(&count)
@@ -36,8 +41,12 @@ func SuccessPage(c *gin.Context, data interface{}) {
 	c.JSON(http.StatusOK, gin.H{"code": SUCCESS_CODE, "message": "成功！", "data": page})
 }
 
-func BadRequestError(c *gin.Context) {
+func BadRequestParamError(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"code": BAD_REQUEST_PARAM, "message": "请求参数错误！"})
+}
+
+func ErrorMessage(c *gin.Context, message string) {
+	c.JSON(http.StatusOK, gin.H{"code": SERVER_ERROR, "message": message})
 }
 
 func ServerError(c *gin.Context) {

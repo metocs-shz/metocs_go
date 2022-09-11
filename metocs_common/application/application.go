@@ -29,6 +29,9 @@ type auth struct {
 	AccessTokenExp    int
 	RefreshTokenExp   int
 	IsGenerateRefresh bool
+	ClientId          string
+	ClientSecret      string
+	GrantType         string
 }
 
 type redis struct {
@@ -60,9 +63,12 @@ func ApplicationInit() *AppConfig {
 			DataBase: viper.GetString("mysql.database"),
 		},
 		Auth: &auth{
-			AccessTokenExp:    viper.GetInt("authTool.accessTokenExp"),
-			RefreshTokenExp:   viper.GetInt("authTool.refreshTokenExp"),
-			IsGenerateRefresh: viper.GetBool("authTool.isGenerateRefresh"),
+			AccessTokenExp:    viper.GetInt("auth.accessTokenExp"),
+			RefreshTokenExp:   viper.GetInt("auth.refreshTokenExp"),
+			IsGenerateRefresh: viper.GetBool("auth.isGenerateRefresh"),
+			ClientId:          viper.GetString("auth.clientId"),
+			ClientSecret:      viper.GetString("auth.clientSecret"),
+			GrantType:         viper.GetString("auth.grantType"),
 		},
 		Redis: &redis{
 			Ip:       viper.GetString("redis.ip"),
